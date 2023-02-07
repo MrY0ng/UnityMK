@@ -1,0 +1,7 @@
+.vs/
+.vscode/
+.vsconfig/
+Library/
+obj/
+Packages/
+Temp/
