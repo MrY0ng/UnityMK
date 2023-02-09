@@ -23,29 +23,25 @@ public class FingerController : MonoBehaviour
         {
             if (ie != null)
             {
-                StopCoroutine(ie);
+                
                 ie = null;
             }
         }
         else if (Input.touchCount == 1)
         {
-                if (ie != null)
-                {
-                    StopCoroutine(ie);
-                }
-                ie = IMonitorMouseOneFinger();
-                StartCoroutine(ie);
+                
+                MonitorMouseOneFinger();
+                
         }
         
         
     }
    
-    IEnumerator IMonitorMouseOneFinger()
+    void MonitorMouseOneFinger()
     {
  
         Touch oneFingerTouch;
-        while (true)
-        {
+        
             oneFingerTouch = Input.GetTouch(0);
             if (oneFingerTouch.phase == TouchPhase.Moved)
             {
@@ -53,7 +49,5 @@ public class FingerController : MonoBehaviour
                 transform.Rotate(-Vector3.up * deltaPos.x * 0.2f, Space.World);
                 
             }
-            yield return 0;
-        }
-    }
-}
+            
+}}
